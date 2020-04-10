@@ -41,21 +41,21 @@ const Organization = () => {
                         onChange={(e) => setName(e.target.value)} />
                 </div>
                 <div className="form-group">
-                    <label htmlFor="location">Services</label>
-                    <input type="text" name="location" className="form-control" />
+                    <label htmlFor="services">Services</label><br />
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                        <label className="form-check-label" htmlFor="inlineCheckbox1">Groceries</label>
+                    </div>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                        <label className="form-check-label" htmlFor="inlineCheckbox2">Cleaning</label>
+                    </div>
+                    <div className="form-check form-check-inline">
+                        <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
+                        <label className="form-check-label" htmlFor="inlineCheckbox3">Depression</label>
+                    </div>
                 </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-                    <label class="form-check-label" for="inlineCheckbox1">1ffjlsjs</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
-                    <label class="form-check-label" for="inlineCheckbox2">2jdskjfls</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled />
-                    <label class="form-check-label" for="inlineCheckbox3">3 fslmjdsl(disabled)</label>
-                </div>
+                
                 <div className="form-group">
                     <label htmlFor="description">Location</label>
                     <input
