@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+import Spinner from './common/Spinner';
+
 const servicesList = ["Groceries", "Cleaning", "Social", "Depression"];
 
 const Organization = () => {
     const [name, setName] = useState("");
     const [services, setServices] = useState([]);
     const [location, setlocation] = useState("");
+    const [loading, setLoading] = useState(false);
 
     // for redirecting
     const history = useHistory();
@@ -15,22 +18,22 @@ const Organization = () => {
         e.preventDefault();
         console.log(name, services, location);
 
-        // const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations`;
+        const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations`;
 
-        // fetch(url, {
-        //         method: 'POST',
-        //         body: JSON.stringify({
-        //         name: name,
-        //         services: services,
-        //         location: 'location'
-        //     }),
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     }
-        // })
-        //     .then(res => res.json())
-        //     .then(resData => console.log(resData))
-        //     .catch(err => console.log(err));
+        fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({
+                name: name,
+                services: services,
+                location: location
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(resData => console.log(resData))
+            .catch(err => console.log(err));
         
         history.push("/organization/profile");
     }
@@ -87,7 +90,8 @@ const Organization = () => {
                         value={location} 
                         onChange={(e) => setlocation(e.target.value)}/>
                 </div>
-                <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />
+                {/* <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} /> */}
+                <Spinner />
             </form>
         </div>
     );
