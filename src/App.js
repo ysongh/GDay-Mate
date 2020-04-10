@@ -21,7 +21,7 @@ function App() {
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/user" component={User} />
       <Route exact path="/organization" component={Organization} />
-      <Route exact path="/organization/profile" component={OrganizationProfile} />
+      <Route exact path="/organization/profile/:id" component={OrganizationProfile} />
       <Route exact path="/checkins" component={Checkins} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />

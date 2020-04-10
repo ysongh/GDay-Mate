@@ -16,7 +16,7 @@ const Organization = () => {
 
     const onSubmit = e => {
         e.preventDefault();
-        console.log(name, services, location);
+        setLoading(true);
 
         const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations`;
 
@@ -32,10 +32,14 @@ const Organization = () => {
             }
         })
             .then(res => res.json())
-            .then(resData => console.log(resData))
-            .catch(err => console.log(err));
-        
-        history.push("/organization/profile");
+            .then(resData => {
+                history.push("/organization/profile/" + resData.id);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+
+        setLoading(false);
     }
 
     const handleCheckBoxservices = e => {
@@ -90,8 +94,7 @@ const Organization = () => {
                         value={location} 
                         onChange={(e) => setlocation(e.target.value)}/>
                 </div>
-                {/* <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} /> */}
-                <Spinner />
+                {loading ? <Spinner /> : <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />}
             </form>
         </div>
     );
