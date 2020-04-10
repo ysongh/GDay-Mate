@@ -37,9 +37,8 @@ const Organization = () => {
             })
             .catch(err => {
                 console.log(err);
+                setLoading(false);
             });
-
-        setLoading(false);
     }
 
     const handleCheckBoxservices = e => {
