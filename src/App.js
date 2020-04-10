@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route  } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Navbar from './components/layout/Navbar';
 import Landing from './components/Landing';
 import Categories from './components/Categories';
 import User from './components/User';
 import Organization from './components/Organization';
+import OrganizationProfile from './components/OrganizationProfile';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 
@@ -19,6 +20,7 @@ function App() {
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/user" component={User} />
       <Route exact path="/organization" component={Organization} />
+      <Route exact path="/organization/profile" component={OrganizationProfile} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
     </Router>

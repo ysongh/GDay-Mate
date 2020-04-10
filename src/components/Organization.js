@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const servicesList = ["Groceries", "Cleaning", "Social", "Depression"];
 
@@ -7,26 +8,31 @@ const Organization = () => {
     const [services, setServices] = useState([]);
     const [location, setlocation] = useState("");
 
+    // for redirecting
+    const history = useHistory();
+
     const onSubmit = e => {
         e.preventDefault();
         console.log(name, services, location);
 
-        const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations`;
+        // const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations`;
 
-        fetch(url, {
-                method: 'POST',
-                body: JSON.stringify({
-                name: name,
-                services: services,
-                location: 'location'
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then(res => res.json())
-            .then(resData => console.log(resData))
-            .catch(err => console.log(err));
+        // fetch(url, {
+        //         method: 'POST',
+        //         body: JSON.stringify({
+        //         name: name,
+        //         services: services,
+        //         location: 'location'
+        //     }),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // })
+        //     .then(res => res.json())
+        //     .then(resData => console.log(resData))
+        //     .catch(err => console.log(err));
+        
+        history.push("/organization/profile");
     }
 
     const handleCheckBoxservices = e => {
