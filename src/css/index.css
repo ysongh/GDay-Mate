@@ -1,3 +1,8 @@
-body{
-    
+.m-center{
+    display: block;
+    margin: auto;
+}
+
+.orgainization__card{
+    margin-top: -2rem;
 }
