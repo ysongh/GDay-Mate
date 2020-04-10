@@ -5,15 +5,27 @@ class Checkins extends Component {
     super();
     this.state = {
       author: "",
-      rating: null,
+      rating: "",
       description: "",
       errors: {},
+      questions: [
+        "I’ve been feeling optimistic about the future",
+        "I’ve been feeling useful",
+        "I’ve been feeling relaxed",
+        " I’ve been dealing with problems well",
+        "I’ve been thinking clearly",
+        "I’ve been feeling close to other people",
+        "I’ve been able to make up my own mind about things",
+      ],
+      responses: [],
+      counter: 0,
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
 
   componentDidMount() {
+    console.log("state", this.state.questions);
     window.scrollTo(0, 0);
   }
 
@@ -22,22 +34,53 @@ class Checkins extends Component {
     console.log("state", this.state);
   }
 
-  onSubmit(e) {
-    console.log("state", this.state);
+  async onSubmit(e) {
+    this.setState({
+      rating: "",
+    });
+
     e.preventDefault();
-    const reviewData = {
-      name: this.state.author,
-      rating: this.state.rating,
-      text: this.state.description,
-    };
-    // this.props.postReview(
-    //   reviewData,
-    //   this.props.match.params.id,
-    //   this.props.history
-    // );
+    this.state.counter++;
+    let coverted = Number(this.state.rating);
+    this.state.responses.push(coverted);
+
+    // console.log("state", this.state);
+    // if (this.state.counter === 6) {
+    //   if finished it will post to db
+    //   redirect to thank you
+
+    try {
+      console.log("star");
+      // Create request to api service
+      const req = await fetch(
+        `https://gdaymatebackend.azurewebsites.net/api/CheckIns`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          // format the data
+          body: JSON.stringify({
+            id: 7,
+            firstName: "Rober",
+            lastName: "Smith",
+            birthdate: "1996-04-10",
+            location: "2028",
+            phoneNumber: "565 788 9090",
+            interests: ["Chess", "Soccer", "Painting", "reading"],
+            needs: ["1,3,4,5,5,2,5"],
+          }),
+        }
+      );
+      const res = await req.json();
+      console.log("res", res);
+      // this.props.history.push("/resources");
+    } catch (err) {
+      console.error(`ERROR: err`);
+    }
+    // }
   }
 
   render() {
+    let { questions, counter } = this.state;
     return (
       <div className="container">
         <div className="row text-center">
@@ -52,7 +95,9 @@ class Checkins extends Component {
               <h3>How are ya?</h3>
               <br />
               <br />
-              <p> I’ve been feeling optimistic about the future </p>
+
+              <p>{questions[counter]}</p>
+
               <br />
               <label htmlFor="star1">
                 1<br />
@@ -63,6 +108,7 @@ class Checkins extends Component {
                   name="rating"
                   type="radio"
                   className=""
+                  checked={this.state.rating == "1"}
                 />
                 <div></div>
               </label>
@@ -76,6 +122,7 @@ class Checkins extends Component {
                   name="rating"
                   type="radio"
                   className="radio-btn hide"
+                  checked={this.state.rating == "2"}
                 />
                 <div></div>
               </label>
@@ -89,6 +136,7 @@ class Checkins extends Component {
                   name="rating"
                   type="radio"
                   className="radio-btn hide"
+                  checked={this.state.rating == "3"}
                 />
                 <div></div>
               </label>
@@ -101,6 +149,7 @@ class Checkins extends Component {
                   name="rating"
                   type="radio"
                   className="radio-btn hide"
+                  checked={this.state.rating == "4"}
                 />
                 <div></div>
               </label>
@@ -113,6 +162,7 @@ class Checkins extends Component {
                   name="rating"
                   type="radio"
                   className="radio-btn hide"
+                  checked={this.state.rating == "5"}
                 />
                 <div></div>
               </label>
