@@ -16,8 +16,15 @@ const Navbar = () => {
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <Link className="nav-link" to="/">Home</Link>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                            <Link className="nav-link" to="/categories">Categories</Link>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </a>
+                            <div className="dropdown-menu pl-2" aria-labelledby="navbarDropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                                <Link className="nav-link" to="/categories">Category 1</Link>
+                                <Link className="nav-link" to="/categories">Category 2</Link>
+                                <Link className="nav-link" to="/categories">Category 3</Link>
+                            </div>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <Link className="nav-link" to="/user">User</Link>
