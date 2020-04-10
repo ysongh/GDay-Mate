@@ -11,16 +11,16 @@ const Navbar = () => {
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav mr-auto">
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <Link className="nav-link" to="/">Home</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <Link className="nav-link" to="/categories">Categories</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
-                    <li className="nav-item">
+                    <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <Link className="nav-link" to="/register">Register</Link>
                     </li>
                 </ul>
