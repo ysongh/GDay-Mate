@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({onClick}) => {
+    
     return(
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="/">Logo</a>
