@@ -18,6 +18,9 @@ const Navbar = () => {
                         <Link className="nav-link" to="/categories">Categories</Link>
                     </li>
                     <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                        <Link className="nav-link" to="/organization">Organization</Link>
+                    </li>
+                    <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                         <Link className="nav-link" to="/login">Login</Link>
                     </li>
                     <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
