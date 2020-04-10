@@ -7,6 +7,7 @@ import Categories from './components/Categories';
 import User from './components/User';
 import Organization from './components/Organization';
 import OrganizationProfile from './components/OrganizationProfile';
+import Checkins from "./components/Checkins";
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 
@@ -21,6 +22,7 @@ function App() {
       <Route exact path="/user" component={User} />
       <Route exact path="/organization" component={Organization} />
       <Route exact path="/organization/profile" component={OrganizationProfile} />
+      <Route exact path="/checkins" component={Checkins} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
     </Router>

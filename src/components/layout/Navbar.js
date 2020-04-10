@@ -27,6 +27,9 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+                            <Link className="nav-link" to="/checkins">Checkins</Link>
+                        </li>
+                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <Link className="nav-link" to="/user">User</Link>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
