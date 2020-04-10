@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 
+const servicesList = ["Groceries", "Cleaning", "Social", "Depression"];
+
 const Organization = () => {
     const [name, setName] = useState("");
-    const [services, setServices] = useState(["groceries", "cleaning"]);
+    const [services, setServices] = useState([]);
     const [location, setlocation] = useState("");
 
     const onSubmit = e => {
@@ -26,6 +28,19 @@ const Organization = () => {
             .then(resData => console.log(resData))
             .catch(err => console.log(err));
     }
+
+    const handleCheckBoxservices = e => {
+        const newSelection = e.target.value;
+        let newSelectionArray;
+
+        if (services.indexOf(newSelection) > -1) {
+            newSelectionArray = services.filter(s => s !== newSelection);
+        } else {
+            newSelectionArray = [...services, newSelection];
+        }
+
+        setServices(newSelectionArray);
+    }
     
     return(
         <div className="container">
@@ -42,18 +57,19 @@ const Organization = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="services">Services</label><br />
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Groceries</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox2">Cleaning</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox3">Depression</label>
-                    </div>
+                    {servicesList.map(service => {
+                        return(
+                            <div className="form-check form-check-inline" key={service}>
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    id={service}
+                                    value={service}
+                                    onChange={e => handleCheckBoxservices(e)}/>
+                                <label className="form-check-label" htmlFor={service}>{service}</label>
+                            </div>
+                        )
+                    })}
                 </div>
                 
                 <div className="form-group">

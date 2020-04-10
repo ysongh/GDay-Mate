@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 const interestsList = ["Reading", "Writing", "Knitting", "Gardening"];
+const needsList = ["Groceries", "Cleaning", "Social", "Depression"];
 
 const User = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [location, setlocation] = useState("");
     const [interests, setInterests] = useState([]);
-    const [needs] = useState([]);
+    const [needs, setNeeds] = useState([]);
 
     const onSubmit = e => {
         e.preventDefault();
@@ -34,6 +35,19 @@ const User = () => {
         }
 
         setInterests(newSelectionArray);
+    }
+
+    const handleCheckBoxNeeds = e => {
+        const newSelection = e.target.value;
+        let newSelectionArray;
+
+        if (needs.indexOf(newSelection) > -1) {
+            newSelectionArray = needs.filter(s => s !== newSelection);
+        } else {
+            newSelectionArray = [...needs, newSelection];
+        }
+
+        setNeeds(newSelectionArray);
     }
     
     return(
@@ -85,18 +99,19 @@ const User = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="needs">Needs</label><br />
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox1">Groceries</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox2">Cleaning</label>
-                    </div>
-                    <div className="form-check form-check-inline">
-                        <input className="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
-                        <label className="form-check-label" htmlFor="inlineCheckbox3">Depression</label>
-                    </div>
+                    {needsList.map(need => {
+                        return(
+                            <div className="form-check form-check-inline" key={need}>
+                                <input
+                                    className="form-check-input"
+                                    type="checkbox"
+                                    id={need}
+                                    value={need}
+                                    onChange={e => handleCheckBoxNeeds(e)}/>
+                                <label className="form-check-label" htmlFor={need}>{need}</label>
+                            </div>
+                        )
+                    })}
                 </div>
                 <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />
             </form>
