@@ -4,6 +4,7 @@ import "./css/index.css";
 import "./css/landing.css";
 import "./css/register.css";
 import "./css/checkins.css";
+import "./css/organization.css";
 import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";

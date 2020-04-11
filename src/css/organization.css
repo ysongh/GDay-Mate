@@ -1,0 +1,12 @@
+.mt-2,
+.title-white {
+    color: white;
+}
+
+.cardHeader {
+    background-color: rgb(0, 209, 177) !important;
+}
+
+.btnPrimary {
+    background-color: rgb(0, 209, 177);
+}
