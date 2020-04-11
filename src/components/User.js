@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Spinner from './common/Spinner';
 
@@ -13,6 +14,7 @@ const User = () => {
     const [needs, setNeeds] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const history = useHistory();
 
     const onSubmit = e => {
         e.preventDefault();
@@ -37,8 +39,7 @@ const User = () => {
         })
             .then(res => res.json())
             .then(resData => {
-                console.log(resData);
-                setLoading(false);
+                history.push("/user/profile/" + resData.id);
             })
             .catch(err => {
                 console.log(err);
