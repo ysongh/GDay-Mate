@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router";
+import { Link } from 'react-router-dom';
 
 import defaultLogo from '../img/defaultUser.png';
 
@@ -44,6 +45,7 @@ const UserProfile = () => {
                         <p>
                             <strong>Needs</strong>: {data.needs.map(i => i + ", ")}
                         </p>
+                        <Link className="btn btn-info" to="/categories">See recommendation</Link>
                     </div>
                 </div>
             </div>
