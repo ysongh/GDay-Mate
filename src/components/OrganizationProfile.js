@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router";
+import { Link } from 'react-router-dom';
 
 import defaultLogo from '../img/defaultCompanyLogo.png';
 
@@ -59,7 +60,10 @@ const OrganizationProfile = () => {
                         {usersData.length > 0 ? (
                             usersData.map(user => {
                                 return (
-                                    <p key={user.id}>&#9786; {user.firstName} {user.lastName}</p>
+                                    <Link key={user.id} to={`/user/profile/${user.id}`}>
+                                        <p >&#9786; {user.firstName} {user.lastName}</p>
+                                    </Link>
+                                    
                                 )
                             })
                         ) : <p>No match yet!</p>}
