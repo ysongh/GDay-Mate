@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router";
 
-import defaultLogo from '../img/defaultCompanyLogo.png';
+import defaultLogo from '../img/defaultUser.png';
 
 const UserProfile = () => {
     const [data, setData] = useState({
@@ -31,7 +31,7 @@ const UserProfile = () => {
     return(
         <>
             <div className="bg-primary p-4">
-                <img className="w-25 rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
+                <img className="default__img rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
                 <h1 className="mt-2 mb-4">{data.firstName} {data.lastName}</h1>
             </div>
             <div className="container orgainization__card">

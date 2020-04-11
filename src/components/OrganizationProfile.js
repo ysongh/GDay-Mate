@@ -46,7 +46,7 @@ const OrganizationProfile = () => {
     return(
         <>
             <div className="bg-primary p-4">
-                <img className="w-25 rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
+                <img className="default__img rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
                 <h1 className="mt-2">{data.name}</h1>
                 <p>
                     {data.services.map(i => i + ", ")}
