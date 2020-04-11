@@ -18,3 +18,8 @@
 .default__img{
     width: 9.5rem;
 }
+
+.footer p{
+    font-size: 1.4rem;
+    text-decoration: underline;
+}
