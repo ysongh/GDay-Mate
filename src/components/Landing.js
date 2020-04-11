@@ -52,9 +52,30 @@ const Landing = () => {
                     <img src={Img4} alt="Sad" />
                 </section>
 
-                <section className="bg-p-color solution py-5">
+                <section className="bg-p-color solution py-5 mt-3 mb-5">
                     <div className="container">
                         <h2>G’Day Mate seeks to aid the elderly and their supporters in ensuring their mental health and to aid in prevention timely intervention</h2>
+                    </div>
+                </section>
+
+                <section className="container action my-5">
+                    <div className="card">
+                        <i className="fas fa-hands-helping"></i>
+                        <div className="card-body">
+                            <p>Aid people who need help with daily activities</p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <i className="fas fa-hands-helping"></i>
+                        <div className="card-body">
+                            <p>Aid people who need help with daily activities</p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <i className="fas fa-hands-helping"></i>
+                        <div className="card-body">
+                            <p>Aid people who need help with daily activities</p>
+                        </div>
                     </div>
                 </section>
             </main>
