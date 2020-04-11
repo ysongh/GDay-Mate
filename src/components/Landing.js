@@ -45,11 +45,17 @@ const Landing = () => {
                 </div>
             </header>
 
-            <main className="container">
-                <section className="problem">
+            <main>
+                <section className="container problem">
                     <h2>Social distancing has severe impacts on mental health of everyone</h2>
                     <p>The elderly population is especially vulnerable during the COVID-19 pandemic​</p>
                     <img src={Img4} alt="Sad" />
+                </section>
+
+                <section className="bg-p-color solution py-5">
+                    <div className="container">
+                        <h2>G’Day Mate seeks to aid the elderly and their supporters in ensuring their mental health and to aid in prevention timely intervention</h2>
+                    </div>
                 </section>
             </main>
         </>

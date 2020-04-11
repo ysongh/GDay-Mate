@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+.bg-p-color{
+    background-color: #00D1B1;
+}
+
 .bg-s-color{
     background-color: #FF515E;
 }

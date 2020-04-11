@@ -18,10 +18,15 @@
 .problem h2{
     font-size: 1.8rem;
     line-height: 1;
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
 }
 
 .problem img{
     width: 100%;
+}
+
+.solution h2{
+    font-size: 1.8rem;
+    line-height: 1;
 }
