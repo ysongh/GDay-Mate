@@ -56,9 +56,6 @@ const OrganizationProfile = () => {
                 <div className="card">
                     <div className="card-body">
                         <h2 className="card-title mb-4">Individuals who might need your help</h2>
-                        {/* <p>&#9786; Bob Park</p>
-                        <p>&#9786; Joe Doe</p>
-                        <p>&#9786; Rob Car</p> */}
                         {usersData.length > 0 ? (
                             usersData.map(user => {
                                 return (

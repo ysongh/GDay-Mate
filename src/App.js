@@ -5,6 +5,7 @@ import Navbar from './components/layout/Navbar';
 import Landing from './components/Landing';
 import Categories from './components/Categories';
 import User from './components/User';
+import UserProfile from './components/UserProfile';
 import Organization from './components/Organization';
 import OrganizationProfile from './components/OrganizationProfile';
 import Checkins from "./components/Checkins";
@@ -20,6 +21,7 @@ function App() {
       <Route exact path="/" component={Landing} />
       <Route exact path="/categories" component={Categories} />
       <Route exact path="/user" component={User} />
+      <Route exact path="/user/profile/:id" component={UserProfile} />
       <Route exact path="/organization" component={Organization} />
       <Route exact path="/organization/profile/:id" component={OrganizationProfile} />
       <Route exact path="/checkins" component={Checkins} />
