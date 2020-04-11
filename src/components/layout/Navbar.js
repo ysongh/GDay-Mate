@@ -24,9 +24,9 @@ const Navbar = () => {
                                 Categories
                             </a>
                             <div className="dropdown-menu pl-2" aria-labelledby="navbarDropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-                                <Link className="nav-link" to="/categories">Category 1</Link>
-                                <Link className="nav-link" to="/categories">Category 2</Link>
-                                <Link className="nav-link" to="/categories">Category 3</Link>
+                                <Link className="nav-link" to="/categories">Category List</Link>
+                                <Link className="nav-link" to="/category">Category 1</Link>
+                                <Link className="nav-link" to="/category">Category 2</Link>
                             </div>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">

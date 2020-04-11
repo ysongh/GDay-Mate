@@ -36,7 +36,7 @@ const UserProfile = () => {
                 <h1 className="mt-2 mb-4">{data.firstName} {data.lastName}</h1>
             </div>
             <div className="container orgainization__card">
-                <div className="card">
+                <div className="card mb-5">
                     <div className="card-body">
                         <p><strong>Location</strong>: {data.location}</p>
                         <p>
@@ -45,7 +45,7 @@ const UserProfile = () => {
                         <p>
                             <strong>Needs</strong>: {data.needs.map(i => i + ", ")}
                         </p>
-                        <Link className="btn btn-info" to="/categories">See recommendation</Link>
+                        <Link className="btn btn-info" to="/category">See recommendation</Link>
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ const OrganizationProfile = () => {
         <p className="title-white">{data.services.map((i) => i + ", ")}</p>
         <p className="title-white">{data.location}</p>
       </div>
-      <div className="container orgainization__card">
+      <div className="container orgainization__card mb-5">
         <div className="card">
           <div className="card-body">
             <h2 className="card-title">Individuals who might need your help</h2>
