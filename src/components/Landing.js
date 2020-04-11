@@ -54,7 +54,7 @@ const Landing = () => {
 
                 <section className="bg-p-color solution py-5 mt-3 mb-5">
                     <div className="container">
-                        <h2>G’Day Mate seeks to aid the elderly and their supporters in ensuring their mental health and to aid in prevention timely intervention</h2>
+                        <h2 className="text-white">G’Day Mate seeks to aid the elderly and their supporters in ensuring their mental health and to aid in prevention timely intervention</h2>
                     </div>
                 </section>
 
@@ -79,9 +79,9 @@ const Landing = () => {
                     </div>
                 </section>
 
-                <section className="bg-p-color solution py-5 mt-3">
+                <section className="bg-p-color solution py-5 mt-3 mb-5">
                     <div className="container next-step">
-                        <h2>Check out our categories to do some activities</h2>
+                        <h2 className="text-white">Check out our categories to do some activities</h2>
                         <Link className="btn btn-warning btn-lg mt-4 next-step__btn" to="/categories">See List</Link>
                     </div>
                 </section>

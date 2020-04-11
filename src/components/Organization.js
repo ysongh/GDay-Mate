@@ -56,7 +56,7 @@ const Organization = () => {
 
   return (
     <div className="container">
-      <form className="mt-5 p-4 bg-light">
+      <form className="my-5 p-4 bg-light">
         <h1 className="mb-4">Organization Sign Up</h1>
         <div className="form-group">
           <label htmlFor="name">Name of Organization</label>

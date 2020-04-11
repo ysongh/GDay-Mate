@@ -77,7 +77,7 @@ const User = () => {
     
     return(
         <div className="container">
-            <form className="mt-5 p-4 bg-light">
+            <form className="my-5 p-4 bg-light">
                 <h1 className="mb-4">User Sign Up</h1>
                 <div className="form-group">
                     <label htmlFor="firstName">First Name</label>

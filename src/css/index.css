@@ -3,12 +3,16 @@
     margin: auto;
 }
 
+.btn-info{
+    background-color: #345794 !important;
+}
+
 .bg-p-color{
-    background-color: #00D1B1;
+    background-color: #345794;
 }
 
 .bg-s-color{
-    background-color: #FF515E;
+    background-color: #C75C14;
 }
 
 .orgainization__card{
