@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import thanksImg from "./../img/ty.gif";
 
 class Checkins extends Component {
   constructor() {
     super();
     this.state = {
+      id: 6,
       author: "",
       rating: "",
       description: "",
@@ -19,6 +21,7 @@ class Checkins extends Component {
       ],
       responses: [],
       counter: 0,
+      satThanks: false,
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -35,52 +38,145 @@ class Checkins extends Component {
   }
 
   async onSubmit(e) {
+    e.preventDefault();
     this.setState({
       rating: "",
     });
-
-    e.preventDefault();
     this.state.counter++;
     let coverted = Number(this.state.rating);
     this.state.responses.push(coverted);
 
-    // console.log("state", this.state);
-    // if (this.state.counter === 6) {
-    //   if finished it will post to db
-    //   redirect to thank you
+    console.log(this.state.counter, this.state.responses);
 
-    try {
-      console.log("star");
-      // Create request to api service
-      const req = await fetch(
-        `https://gdaymatebackend.azurewebsites.net/api/CheckIns`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          // format the data
-          body: JSON.stringify({
-            id: 7,
-            firstName: "Rober",
-            lastName: "Smith",
-            birthdate: "1996-04-10",
-            location: "2028",
-            phoneNumber: "565 788 9090",
-            interests: ["Chess", "Soccer", "Painting", "reading"],
-            needs: ["1,3,4,5,5,2,5"],
-          }),
-        }
-      );
-      const res = await req.json();
-      console.log("res", res);
-      // this.props.history.push("/resources");
-    } catch (err) {
-      console.error(`ERROR: err`);
+    if (this.state.counter === 5) {
+      // show image
+      this.setState({
+        satThanks: true,
+      });
+
+      try {
+        console.log("star");
+        // Create request to api service
+        const req = await fetch(
+          `https://gdaymatebackend.azurewebsites.net/api/CheckIns`,
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            // format the data
+            body: JSON.stringify({
+              userId: this.state.id,
+              responses: this.state.responses,
+            }),
+          }
+        );
+        const res = await req.json();
+        console.log("res", res);
+        // this.props.history.push("/resources");
+      } catch (err) {
+        console.error(`ERROR: err`);
+      }
+
+      const timer = setTimeout(() => {
+        console.log("This will run after 1 second!");
+        this.props.history.push("/");
+      }, 5000);
     }
-    // }
   }
 
   render() {
     let { questions, counter } = this.state;
+    let form = (
+      <form onSubmit={this.onSubmit}>
+        <br />
+        <h2>Hey you,</h2>
+        <h1> G'Day mate! </h1>
+        <h3>How are ya?</h3>
+        <br />
+        <br />
+
+        <p>{questions[counter]}</p>
+
+        <br />
+        <label htmlFor="star1">
+          1<br />
+          <input
+            onChange={this.onChange}
+            value="1"
+            id="star1"
+            name="rating"
+            type="radio"
+            className=""
+            checked={this.state.rating == "1"}
+          />
+          <div></div>
+        </label>
+
+        <label htmlFor="star2">
+          2 <br />
+          <input
+            onChange={this.onChange}
+            value="2"
+            id="star2"
+            name="rating"
+            type="radio"
+            className="radio-btn hide"
+            checked={this.state.rating == "2"}
+          />
+          <div></div>
+        </label>
+
+        <label htmlFor="star3">
+          3<br />
+          <input
+            onChange={this.onChange}
+            value="3"
+            id="star3"
+            name="rating"
+            type="radio"
+            className="radio-btn hide"
+            checked={this.state.rating == "3"}
+          />
+          <div></div>
+        </label>
+        <label htmlFor="star4">
+          4<br />
+          <input
+            onChange={this.onChange}
+            value="4"
+            id="star4"
+            name="rating"
+            type="radio"
+            className="radio-btn hide"
+            checked={this.state.rating == "4"}
+          />
+          <div></div>
+        </label>
+        <label htmlFor="star5">
+          5<br />
+          <input
+            onChange={this.onChange}
+            value="5"
+            id="star5"
+            name="rating"
+            type="radio"
+            className="radio-btn hide"
+            checked={this.state.rating == "5"}
+          />
+          <div></div>
+        </label>
+        <br />
+        <br />
+
+        <input
+          type="submit"
+          className="btn btn-info btn-block mt-4"
+          value="Next"
+        />
+      </form>
+    );
+
+    // let thanksImg = <img src={thanksImg} />;
+
     return (
       <div className="container">
         <div className="row text-center">
@@ -88,93 +184,11 @@ class Checkins extends Component {
             <br />
             <h1>Daily Survey</h1>
             <br />
-            <form onSubmit={this.onSubmit}>
-              <br />
-              <h2>Hey you,</h2>
-              <h1> G'Day mate! </h1>
-              <h3>How are ya?</h3>
-              <br />
-              <br />
-
-              <p>{questions[counter]}</p>
-
-              <br />
-              <label htmlFor="star1">
-                1<br />
-                <input
-                  onChange={this.onChange}
-                  value="1"
-                  id="star1"
-                  name="rating"
-                  type="radio"
-                  className=""
-                  checked={this.state.rating == "1"}
-                />
-                <div></div>
-              </label>
-
-              <label htmlFor="star2">
-                2 <br />
-                <input
-                  onChange={this.onChange}
-                  value="2"
-                  id="star2"
-                  name="rating"
-                  type="radio"
-                  className="radio-btn hide"
-                  checked={this.state.rating == "2"}
-                />
-                <div></div>
-              </label>
-
-              <label htmlFor="star3">
-                3<br />
-                <input
-                  onChange={this.onChange}
-                  value="3"
-                  id="star3"
-                  name="rating"
-                  type="radio"
-                  className="radio-btn hide"
-                  checked={this.state.rating == "3"}
-                />
-                <div></div>
-              </label>
-              <label htmlFor="star4">
-                4<br />
-                <input
-                  onChange={this.onChange}
-                  value="4"
-                  id="star4"
-                  name="rating"
-                  type="radio"
-                  className="radio-btn hide"
-                  checked={this.state.rating == "4"}
-                />
-                <div></div>
-              </label>
-              <label htmlFor="star5">
-                5<br />
-                <input
-                  onChange={this.onChange}
-                  value="5"
-                  id="star5"
-                  name="rating"
-                  type="radio"
-                  className="radio-btn hide"
-                  checked={this.state.rating == "5"}
-                />
-                <div></div>
-              </label>
-              <br />
-              <br />
-
-              <input
-                type="submit"
-                className="btn btn-info btn-block mt-4"
-                value="Next"
-              />
-            </form>
+            {this.state.satThanks ? (
+              <img src={thanksImg} className="d-block w-100" alt="" />
+            ) : (
+              form
+            )}
           </div>
         </div>
       </div>
