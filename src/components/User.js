@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Spinner from './common/Spinner';
+
 const interestsList = ["Reading", "Writing", "Knitting", "Gardening"];
 const needsList = ["Groceries", "Cleaning", "Social", "Depression"];
 
@@ -9,9 +11,12 @@ const User = () => {
     const [location, setlocation] = useState("");
     const [interests, setInterests] = useState([]);
     const [needs, setNeeds] = useState([]);
+    const [loading, setLoading] = useState(false);
+
 
     const onSubmit = e => {
         e.preventDefault();
+        setLoading(true);
         
         const newUser = {
             firstName: firstName,
@@ -20,6 +25,25 @@ const User = () => {
             interests: interests,
             needs: needs
         }
+
+        const url = `https://gdaymatebackend.azurewebsites.net/api/Users`;
+
+        fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(newUser),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(resData => {
+                console.log(resData);
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err);
+                setLoading(false);
+            });
 
         console.log(newUser);
     }
@@ -113,7 +137,7 @@ const User = () => {
                         )
                     })}
                 </div>
-                <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />
+                {loading ? <Spinner /> : <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />}
             </form>
         </div>
     );
