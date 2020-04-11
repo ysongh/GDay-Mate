@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ExImg1 from "../img/example2.jpeg";
-import ExImg2 from "../img/example3.jpeg";
-import ExImg3 from "../img/example4.jpeg";
+import ExImg1 from "../img/hero1.svg";
+import ExImg2 from "../img/hero2.svg";
+import ExImg3 from "../img/hero3.svg";
 
 const Landing = () => {
     return(
