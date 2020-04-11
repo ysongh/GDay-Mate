@@ -138,7 +138,7 @@ const User = () => {
                         )
                     })}
                 </div>
-                {loading ? <Spinner /> : <input type="submit" className="btn btn-primary btn-block" value="Sign Up" onClick={e => onSubmit(e)} />}
+                {loading ? <Spinner /> : <input type="submit" className="btn btn-info btn-block" value="Sign Up" onClick={e => onSubmit(e)} />}
             </form>
         </div>
     );

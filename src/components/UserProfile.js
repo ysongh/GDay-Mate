@@ -6,8 +6,8 @@ import defaultLogo from '../img/defaultUser.png';
 const UserProfile = () => {
     const [data, setData] = useState({
         "id": 0,
-        "firstName": "First Name",
-        "lastName": "Last Name",
+        "firstName": "First",
+        "lastName": "Last",
         "location": "Location",
         "interests": [],
         "needs": []
@@ -30,7 +30,7 @@ const UserProfile = () => {
 
     return(
         <>
-            <div className="bg-primary p-4">
+            <div className="bg-s-color p-4">
                 <img className="default__img rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
                 <h1 className="mt-2 mb-4">{data.firstName} {data.lastName}</h1>
             </div>

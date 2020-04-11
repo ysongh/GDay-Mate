@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+.bg-s-color{
+    background-color: #FF515E;
+}
+
 .orgainization__card{
     margin-top: -2rem;
 }
