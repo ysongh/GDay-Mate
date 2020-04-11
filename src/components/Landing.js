@@ -11,21 +11,21 @@ const Landing = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={ExImg1} className="d-block w-100" alt="" />
-                        <div class="hero-text">
+                        <div className="hero-text">
                             <h1>Hello World 1</h1>
                             <button className="btn btn-primary">Learn More</button>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={ExImg2} className="d-block w-100" alt="" />
-                        <div class="hero-text">
+                        <div className="hero-text">
                             <h1>Hello World 2</h1>
                             <button className="btn btn-primary">Learn More</button>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={ExImg3} className="d-block w-100" alt="" />
-                        <div class="hero-text">
+                        <div className="hero-text">
                             <h1>Hello World 3</h1>
                             <button className="btn btn-primary">Learn More</button>
                         </div>
