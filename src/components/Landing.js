@@ -78,6 +78,13 @@ const Landing = () => {
                         </div>
                     </div>
                 </section>
+
+                <section className="bg-p-color solution py-5 mt-3">
+                    <div className="container next-step">
+                        <h2>Check out our categories to do some activities</h2>
+                        <Link className="btn btn-warning btn-lg mt-4 next-step__btn" to="/categories">See List</Link>
+                    </div>
+                </section>
             </main>
         </>
     );
