@@ -66,15 +66,15 @@ const Landing = () => {
                         </div>
                     </div>
                     <div className="card">
-                        <i className="fas fa-hands-helping"></i>
+                        <i className="fas fa-phone-volume"></i>
                         <div className="card-body">
-                            <p>Aid people who need help with daily activities</p>
+                            <p>Use voice functionality to help anymore without internet/smart phones​</p>
                         </div>
                     </div>
                     <div className="card">
-                        <i className="fas fa-hands-helping"></i>
+                        <i className="fas fa-users"></i>
                         <div className="card-body">
-                            <p>Aid people who need help with daily activities</p>
+                            <p>Connect people with similar interests and give a sense of community​</p>
                         </div>
                     </div>
                 </section>
