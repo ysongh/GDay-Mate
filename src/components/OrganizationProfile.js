@@ -11,6 +11,8 @@ const OrganizationProfile = () => {
         "services": []
     })
 
+    const [usersData, setUsersData] = useState([]);
+
     const {id} =  useParams();
 
     useEffect(() => {
@@ -24,7 +26,22 @@ const OrganizationProfile = () => {
             .catch(err => {
                 console.log(err);
             });
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations/${id}/matches`;
+
+        fetch(url)
+            .then(res => res.json())
+            .then(resData => {
+                setUsersData(resData);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, []);
+
+
     return(
         <>
             <div className="bg-primary p-4">
@@ -39,9 +56,16 @@ const OrganizationProfile = () => {
                 <div className="card">
                     <div className="card-body">
                         <h2 className="card-title mb-4">Individuals who might need your help</h2>
-                        <p>&#9786; Bob Park</p>
+                        {/* <p>&#9786; Bob Park</p>
                         <p>&#9786; Joe Doe</p>
-                        <p>&#9786; Rob Car</p>
+                        <p>&#9786; Rob Car</p> */}
+                        {usersData.length > 0 ? (
+                            usersData.map(user => {
+                                return (
+                                    <p key={user.id}>&#9786; {user.firstName} {user.lastName}</p>
+                                )
+                            })
+                        ) : <p>No match yet!</p>}
                     </div>
                 </div>
             </div>
