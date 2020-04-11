@@ -1,4 +1,4 @@
-.hero-text{
+.hero__text{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -6,5 +6,11 @@
     z-index: 100;
     background: rgba(228, 222, 222, 0.8);
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1.5rem;
+}
+
+.hero__title{
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
 }

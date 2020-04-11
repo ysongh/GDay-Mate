@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import ExImg1 from "../img/example2.jpeg";
 import ExImg2 from "../img/example3.jpeg";
@@ -11,23 +12,23 @@ const Landing = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <img src={ExImg1} className="d-block w-100" alt="" />
-                        <div className="hero-text">
-                            <h1>Hello World 1</h1>
-                            <button className="btn btn-primary">Learn More</button>
+                        <div className="hero__text">
+                            <h1 className="hero__title">Need help stay mentally healthy?</h1>
+                            <Link className="btn btn-info" to="/user">Get Started</Link>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={ExImg2} className="d-block w-100" alt="" />
-                        <div className="hero-text">
-                            <h1>Hello World 2</h1>
-                            <button className="btn btn-primary">Learn More</button>
+                        <div className="hero__text">
+                            <h1 className="hero__title">Provide pandemic situation?</h1>
+                            <Link className="btn btn-info" to="/organization">Get Started</Link>
                         </div>
                     </div>
                     <div className="carousel-item">
                         <img src={ExImg3} className="d-block w-100" alt="" />
-                        <div className="hero-text">
-                            <h1>Hello World 3</h1>
-                            <button className="btn btn-primary">Learn More</button>
+                        <div className="hero__text">
+                            <h1 className="hero__title">Connect people with similar interests</h1>
+                            <Link className="btn btn-info" to="/categories">Learn More</Link>
                         </div>
                     </div>
                 </div>
