@@ -1,3 +1,26 @@
+.hero__img{
+    position: relative;
+    background-color: #345794;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+}
+
+.hero__img-1{
+    background-image: url(../img/hero1.svg);
+    background-position: top;
+}
+
+.hero__img-2{
+    background-image: url(../img/hero2.svg);
+    background-position: bottom;
+}
+
+.hero__img-3{
+    background-image: url(../img/hero3.svg);
+    background-position: center;
+}
+
 .hero__text{
     position: absolute;
     top: 50%;
@@ -51,4 +74,18 @@
 
 .next-step__btn{
     width: 100%;
+}
+
+@media only screen and (min-width: 700px){
+    .hero__img-1{
+        background-image: url(../img/hero1-lg.svg);
+    }
+    
+    .hero__img-2{
+        background-image: url(../img/hero2-lg.svg);
+    }
+    
+    .hero__img-3{
+        background-image: url(../img/hero3-lg.svg);
+    }
 }

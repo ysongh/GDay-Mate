@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import ExImg1 from "../img/hero1.svg";
-import ExImg2 from "../img/hero2.svg";
-import ExImg3 from "../img/hero3.svg";
 import Img4 from "../img/problem.svg";
 
 const Landing = () => {
@@ -13,24 +10,27 @@ const Landing = () => {
                 <div id="carouselExampleFade" className="carousel slide carousel-fade" data-ride="carousel">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src={ExImg1} className="d-block w-100" alt="" />
-                            <div className="hero__text">
-                                <h1 className="hero__title">Need help stay mentally healthy?</h1>
-                                <Link className="btn btn-info" to="/user">Get Started</Link>
+                            <div className="hero__img hero__img-1">
+                                <div className="hero__text">
+                                    <h1 className="hero__title">Need help stay mentally healthy?</h1>
+                                    <Link className="btn btn-info" to="/user">Get Started</Link>
+                                </div>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src={ExImg2} className="d-block w-100" alt="" />
-                            <div className="hero__text">
-                                <h1 className="hero__title">Provide pandemic situation?</h1>
-                                <Link className="btn btn-info" to="/organization">Get Started</Link>
+                            <div className="hero__img hero__img-2">
+                                <div className="hero__text">
+                                    <h1 className="hero__title">Provide pandemic situation?</h1>
+                                    <Link className="btn btn-info" to="/organization">Get Started</Link>
+                                </div>
                             </div>
                         </div>
                         <div className="carousel-item">
-                            <img src={ExImg3} className="d-block w-100" alt="" />
-                            <div className="hero__text">
-                                <h1 className="hero__title">Connect people with similar interests</h1>
-                                <Link className="btn btn-info" to="/categories">Learn More</Link>
+                            <div className="hero__img hero__img-3">
+                                <div className="hero__text">
+                                    <h1 className="hero__title">Connect people with similar interests</h1>
+                                    <Link className="btn btn-info" to="/categories">Learn More</Link>
+                                </div>
                             </div>
                         </div>
                     </div>
