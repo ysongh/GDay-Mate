@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Register extends Component {
   constructor() {
@@ -43,7 +43,7 @@ class Register extends Component {
     console.log("newUser", this.state);
   }
   render() {
-    const { errors } = this.state;
+    //const { errors } = this.state;
     return (
       <div className="register">
         <div className="container">

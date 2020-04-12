@@ -53,7 +53,7 @@ const Category = () => {
                 
                                   <div className="col-7 col-sm-7 col-md-7">
                                     <h2 className="date">
-                                      <a to={`#`} className="author-name">
+                                      <a href={`/`} className="author-name">
                                         {item.title}
                                       </a>{" "}
                                     </h2>

@@ -24,10 +24,10 @@ class Login extends Component {
   onSubmit(e) {
     e.preventDefault();
     console.log("state", this.state);
-    const userData = {
-      email: this.state.email,
-      password: this.state.password,
-    };
+    // const userData = {
+    //   email: this.state.email,
+    //   password: this.state.password,
+    // };
   }
 
   render() {
