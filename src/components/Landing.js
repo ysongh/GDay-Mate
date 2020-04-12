@@ -47,9 +47,15 @@ const Landing = () => {
 
             <main>
                 <section className="container problem">
-                    <h2>Social distancing has severe impacts on mental health of everyone</h2>
-                    <p>The elderly population is especially vulnerable during the COVID-19 pandemic​</p>
-                    <img src={Img4} alt="Sad" />
+                    <div class="row mt-5">
+                        <div class="col-12 col-md-6">
+                            <h2>Social distancing has severe impacts on mental health of everyone</h2>
+                            <p>The elderly population is especially vulnerable during the COVID-19 pandemic​</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img src={Img4} alt="Sad" />
+                        </div>
+                    </div>
                 </section>
 
                 <section className="bg-p-color solution py-5 mt-3 mb-5">
@@ -59,22 +65,30 @@ const Landing = () => {
                 </section>
 
                 <section className="container action my-5">
-                    <div className="card">
-                        <i className="fas fa-hands-helping"></i>
-                        <div className="card-body">
-                            <p>Aid people who need help with daily activities</p>
+                    <div className="row">
+                        <div className="col-12 col-md-6 col-lg-4">
+                            <div className="card">
+                                <i className="fas fa-hands-helping"></i>
+                                <div className="card-body">
+                                    <p>Aid people who need help with daily activities</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="card">
-                        <i className="fas fa-phone-volume"></i>
-                        <div className="card-body">
-                            <p>Use voice functionality to help anymore without internet/smart phones​</p>
+                        <div className="col-12 col-md-6 col-lg-4">
+                            <div className="card">
+                                <i className="fas fa-phone-volume"></i>
+                                <div className="card-body">
+                                    <p>Use voice functionality to help anymore without internet/smart phones​</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div className="card">
-                        <i className="fas fa-users"></i>
-                        <div className="card-body">
-                            <p>Connect people with similar interests and give a sense of community​</p>
+                        <div className="col-12 col-md-6 col-lg-4">
+                            <div className="card">
+                                <i className="fas fa-users"></i>
+                                <div className="card-body">
+                                    <p>Connect people with similar interests and give a sense of community​</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
