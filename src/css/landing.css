@@ -88,4 +88,13 @@
     .hero__img-3{
         background-image: url(../img/hero3-lg.svg);
     }
+
+    .hero__text{
+        padding: 2rem;
+    }
+
+    .hero__title{
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
 }
