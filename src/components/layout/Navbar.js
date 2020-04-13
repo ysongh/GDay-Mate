@@ -27,25 +27,31 @@ const Navbar = () => {
                                 <Link className="nav-link" to="/categories">Category List</Link>
                                 <Link className="nav-link" to="/category">Category 1</Link>
                                 <Link className="nav-link" to="/category">Category 2</Link>
+                                <Link className="nav-link" to="/category">Category 3</Link>
                             </div>
                         </li>
                         <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
                             <Link className="nav-link" to="/checkins">Checkins</Link>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                            <Link className="nav-link" to="/user">User</Link>
-                        </li>
-                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                            <Link className="nav-link" to="/organization">Organization</Link>
-                        </li>
-                        
                     </ul>
                     <ul className="navbar-nav">
-                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                            <Link className="nav-link" to="/login">Login</Link>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Login
+                            </a>
+                            <div className="dropdown-menu pl-2" aria-labelledby="navbarDropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                                <Link className="nav-link" to="/login">As User</Link>
+                                <Link className="nav-link" to="/login">As Organization</Link>
+                            </div>
                         </li>
-                        <li className="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
-                            <Link className="nav-link" to="/register">Register</Link>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Get Started
+                            </a>
+                            <div className="dropdown-menu pl-2" aria-labelledby="navbarDropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
+                                <Link className="nav-link" to="/user">As User</Link>
+                                <Link className="nav-link" to="/organization">As Organization</Link>
+                            </div>
                         </li>
                     </ul>
                 </div>
