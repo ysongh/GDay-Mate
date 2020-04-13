@@ -1,91 +1,54 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: "",
-      errors: {},
-    };
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
+const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
-  onChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
-  }
-
-  onSubmit(e) {
+  const onSubmit = (e) => {
     e.preventDefault();
-    console.log("state", this.state);
-    // const userData = {
-    //   email: this.state.email,
-    //   password: this.state.password,
-    // };
-  }
+    
+    const userInfo = {
+      email,
+      password
+    }
 
-  render() {
-    return (
-      <div className="register">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-5 m-auto text-center space-top">
-              <br /> <br />
-              <div className="loginContainer space-top">
-                <div className="col-md-10 m-auto">
-                  <h4 className="text-center">Login with Email</h4>
-                  <form onSubmit={this.onSubmit}>
-                    <div className="form-group">
-                      <input
-                        type="email"
-                        placeholder="Email Address"
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <div className="form-group">
-                      <input
-                        type="password"
-                        placeholder="Password"
-                        name="password"
-                        value={this.state.password}
-                        onChange={this.onChange}
-                        required
-                      />
-                    </div>
-                    <input
-                      type="checkbox"
-                      value="lsRememberMe"
-                      id="rememberMe"
-                    />{" "}
-                    <label htmlFor="rememberMe">Remember me</label>
-                    <input
-                      type="submit"
-                      className="btn btn-info btn-block mt-4"
-                    />
-                    <li>
-                      <Link to="/register">
-                        <i className="fa fa-angle-double-right"></i>Signup
-                        instead
-                      </Link>
-                    </li>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+    console.log(userInfo);
+  };
+
+  return (
+    <div className="container">
+      <form className="my-5 p-4 bg-light">
+        <h1 className="mb-4">Login</h1>
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-      </div>
-    );
-  }
-}
+
+        <div className="form-group">
+          <label htmlFor="password">password</label>
+          <input
+            type="password"
+            name="password"
+            className="form-control"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+        <input
+          type="submit"
+          className="btn btn-info btn-block"
+          value="Login"
+          onClick={(e) => onSubmit(e)}
+        />
+    </form>
+    </div>
+  );
+};
 
 export default Login;
