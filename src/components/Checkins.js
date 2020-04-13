@@ -97,7 +97,7 @@ class Checkins extends Component {
         <p>{questions[counter]}</p>
 
         <br />
-        <label htmlFor="star1">
+        <label htmlFor="star1" className="checkin-label">
           1<br />
           <input
             onChange={this.onChange}
@@ -111,7 +111,7 @@ class Checkins extends Component {
           <div></div>
         </label>
 
-        <label htmlFor="star2">
+        <label htmlFor="star2" className="checkin-label">
           2 <br />
           <input
             onChange={this.onChange}
@@ -125,7 +125,7 @@ class Checkins extends Component {
           <div></div>
         </label>
 
-        <label htmlFor="star3">
+        <label htmlFor="star3" className="checkin-label">
           3<br />
           <input
             onChange={this.onChange}
@@ -138,7 +138,7 @@ class Checkins extends Component {
           />
           <div></div>
         </label>
-        <label htmlFor="star4">
+        <label htmlFor="star4" className="checkin-label">
           4<br />
           <input
             onChange={this.onChange}
@@ -151,7 +151,7 @@ class Checkins extends Component {
           />
           <div></div>
         </label>
-        <label htmlFor="star5">
+        <label htmlFor="star5" className="checkin-label">
           5<br />
           <input
             onChange={this.onChange}
