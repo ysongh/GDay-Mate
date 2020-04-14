@@ -47,12 +47,12 @@ const Landing = () => {
 
             <main>
                 <section className="container problem">
-                    <div class="row mt-5">
-                        <div class="col-12 col-md-6">
+                    <div className="row mt-5">
+                        <div className="col-12 col-md-6">
                             <h2>Social distancing has severe impacts on mental health of everyone</h2>
                             <p>The elderly population is especially vulnerable during the COVID-19 pandemic​</p>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div className="col-12 col-md-6">
                             <img src={Img4} alt="Sad" />
                         </div>
                     </div>
@@ -96,7 +96,7 @@ const Landing = () => {
                 <section className="bg-p-color solution py-5 mt-3 mb-5">
                     <div className="container next-step">
                         <h2 className="text-white">Check out our categories to do some activities</h2>
-                        <Link className="btn btn-warning btn-lg mt-4 next-step__btn" to="/categories">See List</Link>
+                        <Link className="btn btn-warning btn-lg mt-4 next-step__btn center-block" to="/categories">See List</Link>
                     </div>
                 </section>
             </main>

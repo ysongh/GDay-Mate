@@ -72,6 +72,10 @@
     margin-top: 0;
 }
 
+.next-step{
+    width: 100%;
+}
+
 .next-step__btn{
     width: 100%;
 }
@@ -97,4 +101,22 @@
         font-size: 2rem;
         margin-bottom: 1.5rem;
     }
+
+    .solution h2{
+        width: 60%;
+        margin: auto;
+        font-size: 2rem;
+    }
+
+    .next-step{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .next-step__btn{
+        width: 12rem;
+    }
+
+    
 }
