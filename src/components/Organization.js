@@ -104,7 +104,7 @@ const Organization = () => {
         ) : (
           <input
             type="submit"
-            className="btn btn-info  btn-block"
+            className="btn btn-info btn-lg px-5 mt-3"
             value="Sign Up"
             onClick={(e) => onSubmit(e)}
           />

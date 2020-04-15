@@ -79,23 +79,25 @@ const User = () => {
         <div className="container">
             <form className="my-5 p-4 bg-light">
                 <h1 className="mb-4">User Sign Up</h1>
-                <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        className="form-control"
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)} />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        className="form-control"
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)} />
+                <div className="row">
+                    <div className="form-group col-12 col-md-6">
+                        <label htmlFor="firstName">First Name</label>
+                        <input
+                            type="text"
+                            name="firstName"
+                            className="form-control"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)} />
+                    </div>
+                    <div className="form-group col-12 col-md-6">
+                        <label htmlFor="lastName">Last Name</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            className="form-control"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)} />
+                    </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="location">Location</label>
@@ -138,7 +140,7 @@ const User = () => {
                         )
                     })}
                 </div>
-                {loading ? <Spinner /> : <input type="submit" className="btn btn-info btn-block" value="Sign Up" onClick={e => onSubmit(e)} />}
+                {loading ? <Spinner /> : <input type="submit" className="btn btn-info btn-lg px-5 mt-3" value="Sign Up" onClick={e => onSubmit(e)} />}
             </form>
         </div>
     );
