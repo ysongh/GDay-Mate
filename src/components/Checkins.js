@@ -14,7 +14,7 @@ class Checkins extends Component {
         "I’ve been feeling optimistic about the future",
         "I’ve been feeling useful",
         "I’ve been feeling relaxed",
-        " I’ve been dealing with problems well",
+        "I’ve been dealing with problems well",
         "I’ve been thinking clearly",
         "I’ve been feeling close to other people",
         "I’ve been able to make up my own mind about things",
@@ -88,9 +88,9 @@ class Checkins extends Component {
     let form = (
       <form onSubmit={this.onSubmit}>
         <br />
-        <h2>Hey you,</h2>
-        <h1> G'Day mate! </h1>
-        <h3>How are ya?</h3>
+        <h2 className="p-color">Hey you,</h2>
+        <h1 className="s-color">G'Day mate! </h1>
+        <h3 className="p-color">How are ya?</h3>
         <br />
         <br />
 
@@ -169,7 +169,7 @@ class Checkins extends Component {
 
         <input
           type="submit"
-          className="btn btn-info btn-block mt-4"
+          className="btn btn-info btn-lg px-5 mt-3 mb-5"
           value="Next"
         />
       </form>
@@ -179,7 +179,7 @@ class Checkins extends Component {
 
     return (
       <div className="container">
-        <div className="row text-center">
+        <div className="row text-center mb-5">
           <div className="col-md-8 m-auto">
             <br />
             <h1>Daily Survey</h1>
