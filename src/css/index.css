@@ -31,6 +31,12 @@
     width: 9.5rem;
 }
 
+.checkbox-group{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+}
+
+
 .footer p{
     font-size: 1.4rem;
     text-decoration: underline;

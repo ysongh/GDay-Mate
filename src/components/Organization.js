@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import Spinner from "./common/Spinner";
 
-const servicesList = ["Groceries", "Cleaning", "Social", "Depression"];
+const servicesList = ["Cleaning", "Cooking", "Delivery", "Depression", "Groceries", "Medicine", "Social", "Translate", "Transportation"];
 
 const Organization = () => {
   const [name, setName] = useState("");
@@ -71,22 +71,24 @@ const Organization = () => {
         <div className="form-group">
           <label htmlFor="services">Services</label>
           <br />
-          {servicesList.map((service) => {
-            return (
-              <div className="form-check form-check-inline" key={service}>
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id={service}
-                  value={service}
-                  onChange={(e) => handleCheckBoxservices(e)}
-                />
-                <label className="form-check-label" htmlFor={service}>
-                  {service}
-                </label>
-              </div>
-            );
-          })}
+          <div className="checkbox-group">
+            {servicesList.map((service) => {
+              return (
+                <div className="form-check form-check-inline" key={service}>
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    id={service}
+                    value={service}
+                    onChange={(e) => handleCheckBoxservices(e)}
+                  />
+                  <label className="form-check-label" htmlFor={service}>
+                    {service}
+                  </label>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="form-group">

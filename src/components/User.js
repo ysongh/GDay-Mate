@@ -3,8 +3,9 @@ import { useHistory } from 'react-router-dom';
 
 import Spinner from './common/Spinner';
 
-const interestsList = ["Reading", "Writing", "Knitting", "Gardening"];
-const needsList = ["Groceries", "Cleaning", "Social", "Depression"];
+const interestsList = ["Adventure", "Bars", "Biking", "Concerts", "Dancing", "Events", "Food", "Games", "Hiking",
+                       "Indoor", "Karaoke", "Movies", "Music", "Museums", "Night Life", "Outdoor", "Party", "Photography", "Social", "Sports", "Theater"]
+const needsList = ["Cleaning", "Cooking", "Delivery", "Depression", "Groceries", "Medicine", "Social", "Translate", "Transportation"];
 
 const User = () => {
     const [firstName, setFirstName] = useState("");
@@ -108,37 +109,41 @@ const User = () => {
                         value={location} 
                         onChange={(e) => setlocation(e.target.value)}/>
                 </div>
-                <div className="form-group">
+                <div className="form-group ">
                     <label htmlFor="interests">Interests</label><br />
-                    {interestsList.map(interest => {
-                        return(
-                            <div className="form-check form-check-inline" key={interest}>
-                                <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    id={interest}
-                                    value={interest}
-                                    onChange={e => handleCheckBoxInterests(e)}/>
-                                <label className="form-check-label" htmlFor={interest}>{interest}</label>
-                            </div>
-                        )
-                    })}
+                    <div className="checkbox-group">
+                        {interestsList.map(interest => {
+                            return(
+                                <div className="form-check form-check-inline" key={interest}>
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id={interest}
+                                        value={interest}
+                                        onChange={e => handleCheckBoxInterests(e)}/>
+                                    <label className="form-check-label" htmlFor={interest}>{interest}</label>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="needs">Needs</label><br />
-                    {needsList.map(need => {
-                        return(
-                            <div className="form-check form-check-inline" key={need}>
-                                <input
-                                    className="form-check-input"
-                                    type="checkbox"
-                                    id={need}
-                                    value={need}
-                                    onChange={e => handleCheckBoxNeeds(e)}/>
-                                <label className="form-check-label" htmlFor={need}>{need}</label>
-                            </div>
-                        )
-                    })}
+                    <div className="checkbox-group">
+                        {needsList.map(need => {
+                            return(
+                                <div className="form-check form-check-inline" key={need}>
+                                    <input
+                                        className="form-check-input"
+                                        type="checkbox"
+                                        id={need}
+                                        value={need}
+                                        onChange={e => handleCheckBoxNeeds(e)}/>
+                                    <label className="form-check-label" htmlFor={need}>{need}</label>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
                 {loading ? <Spinner /> : <input type="submit" className="btn btn-info btn-lg px-5 mt-3" value="Sign Up" onClick={e => onSubmit(e)} />}
             </form>
