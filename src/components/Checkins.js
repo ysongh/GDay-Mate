@@ -76,10 +76,10 @@ class Checkins extends Component {
         console.error(`ERROR: err`);
       }
 
-      const timer = setTimeout(() => {
-        console.log("This will run after 1 second!");
-        this.props.history.push("/");
-      }, 5000);
+      // const timer = setTimeout(() => {
+      //   console.log("This will run after 1 second!");
+      //   this.props.history.push("/");
+      // }, 5000);
     }
   }
 
@@ -106,7 +106,7 @@ class Checkins extends Component {
             name="rating"
             type="radio"
             className=""
-            checked={this.state.rating == "1"}
+            checked={this.state.rating === "1"}
           />
           <div></div>
         </label>
@@ -120,7 +120,7 @@ class Checkins extends Component {
             name="rating"
             type="radio"
             className="radio-btn hide"
-            checked={this.state.rating == "2"}
+            checked={this.state.rating === "2"}
           />
           <div></div>
         </label>
@@ -134,7 +134,7 @@ class Checkins extends Component {
             name="rating"
             type="radio"
             className="radio-btn hide"
-            checked={this.state.rating == "3"}
+            checked={this.state.rating === "3"}
           />
           <div></div>
         </label>
@@ -147,7 +147,7 @@ class Checkins extends Component {
             name="rating"
             type="radio"
             className="radio-btn hide"
-            checked={this.state.rating == "4"}
+            checked={this.state.rating === "4"}
           />
           <div></div>
         </label>
@@ -160,7 +160,7 @@ class Checkins extends Component {
             name="rating"
             type="radio"
             className="radio-btn hide"
-            checked={this.state.rating == "5"}
+            checked={this.state.rating === "5"}
           />
           <div></div>
         </label>

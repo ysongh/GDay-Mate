@@ -16,11 +16,11 @@ const OrganizationProfile = () => {
   const [usersData, setUsersData] = useState([]);
 
   const { id } = useParams();
+  const url1 = `https://gdaymatebackend.azurewebsites.net/api/Organisations/${id}`;
+  const url2 = `https://gdaymatebackend.azurewebsites.net/api/Organisations/${id}/matches`;
 
   useEffect(() => {
-    const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations/${id}`;
-
-    fetch(url)
+    fetch(url1)
       .then((res) => res.json())
       .then((resData) => {
         setData(resData);
@@ -28,12 +28,10 @@ const OrganizationProfile = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url1]);
 
   useEffect(() => {
-    const url = `https://gdaymatebackend.azurewebsites.net/api/Organisations/${id}/matches`;
-
-    fetch(url)
+    fetch(url2)
       .then((res) => res.json())
       .then((resData) => {
         setUsersData(resData);
@@ -41,7 +39,7 @@ const OrganizationProfile = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [url2]);
 
   return (
     <>

@@ -15,10 +15,9 @@ const UserProfile = () => {
     })
 
     const {id} =  useParams();
+    const url = `https://gdaymatebackend.azurewebsites.net/api/Users/${id}`;
 
     useEffect(() => {
-        const url = `https://gdaymatebackend.azurewebsites.net/api/Users/${id}`;
-
         fetch(url)
             .then(res => res.json())
             .then(resData => {
@@ -27,7 +26,7 @@ const UserProfile = () => {
             .catch(err => {
                 console.log(err);
             });
-    }, []);
+    }, [url]);
 
     return(
         <>
