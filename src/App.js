@@ -11,7 +11,6 @@ import Organization from './components/Organization';
 import OrganizationProfile from './components/OrganizationProfile';
 import Checkins from "./components/Checkins";
 import Login from './components/auth/Login';
-import Register from './components/auth/Register';
 import Footer from './components/layout/Footer';
 
 function App() {
@@ -27,7 +26,6 @@ function App() {
       <Route exact path="/organization/profile/:id" component={OrganizationProfile} />
       <Route exact path="/checkins" component={Checkins} />
       <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Register} />
       <Footer />
     </Router>
   );
