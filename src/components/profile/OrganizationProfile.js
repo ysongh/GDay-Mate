@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 // import defaultLogo from "../img/defaultCompanyLogo.png";
-import defaultLogo from "../img/c2.jpg";
+import defaultLogo from "../../img/c2.jpg";
 
 const OrganizationProfile = () => {
   const [data, setData] = useState({

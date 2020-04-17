@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import Spinner from "./common/Spinner";
+import Spinner from "../common/Spinner";
 
 const servicesList = ["Cleaning", "Cooking", "Delivery", "Depression", "Groceries", "Medicine", "Social", "Translate", "Transportation"];
 
-const Organization = () => {
+const OrganizationRegister = () => {
   const [name, setName] = useState("");
   const [services, setServices] = useState([]);
   const [location, setlocation] = useState("");
@@ -116,4 +116,4 @@ const Organization = () => {
   );
 };
 
-export default Organization;
+export default OrganizationRegister;

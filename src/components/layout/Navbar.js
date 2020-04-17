@@ -49,8 +49,8 @@ const Navbar = () => {
                                 Get Started
                             </a>
                             <div className="dropdown-menu pl-2" aria-labelledby="navbarDropdown" data-toggle="collapse" data-target=".navbar-collapse.show">
-                                <Link className="nav-link" to="/user">As User</Link>
-                                <Link className="nav-link" to="/organization">As Organization</Link>
+                                <Link className="nav-link" to="/user/register">As User</Link>
+                                <Link className="nav-link" to="/organization/register">As Organization</Link>
                             </div>
                         </li>
                     </ul>

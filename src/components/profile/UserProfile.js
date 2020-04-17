@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams} from "react-router";
 import { Link } from 'react-router-dom';
 
-import defaultLogo from '../img/defaultUser.png';
+import defaultLogo from '../../img/defaultUser.png';
 
 const UserProfile = () => {
     const [data, setData] = useState({

@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Spinner from './common/Spinner';
+import Spinner from '../common/Spinner';
 
 const interestsList = ["Adventure", "Bars", "Biking", "Concerts", "Dancing", "Events", "Food", "Games", "Hiking",
                        "Indoor", "Karaoke", "Movies", "Music", "Museums", "Night Life", "Outdoor", "Party", "Photography", "Social", "Sports", "Theater"]
 const needsList = ["Cleaning", "Cooking", "Delivery", "Depression", "Groceries", "Medicine", "Social", "Translate", "Transportation"];
 
-const User = () => {
+const UserRegister = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [location, setlocation] = useState("");
@@ -151,4 +151,4 @@ const User = () => {
     );
 };
 
-export default User;
+export default UserRegister;
