@@ -32,7 +32,7 @@ const UserProfile = () => {
         <>
             <div className="bg-s-color p-4">
                 <img className="default__img rounded-circle m-center" src={defaultLogo} alt="Company Logo" />
-                <h1 className="mt-2 mb-4">{data.firstName} {data.lastName}</h1>
+                <h1 className="text-center mt-2 mb-4">{data.firstName} {data.lastName}</h1>
             </div>
             <div className="container orgainization__card">
                 <div className="card mb-5">

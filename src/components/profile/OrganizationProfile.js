@@ -49,9 +49,9 @@ const OrganizationProfile = () => {
           src={defaultLogo}
           alt="Company Logo"
         />
-        <h1 className="mt-2">{data.name}</h1>
-        <p className="title-white">{data.services.map((i) => i + ", ")}</p>
-        <p className="title-white">{data.location}</p>
+        <h1 className="mt-2 text-center">{data.name}</h1>
+        <p className="title-white text-center">{data.services.map((i) => i + ", ")}</p>
+        <p className="title-white text-center">{data.location}</p>
       </div>
       <div className="container orgainization__card mb-5">
         <div className="card">
